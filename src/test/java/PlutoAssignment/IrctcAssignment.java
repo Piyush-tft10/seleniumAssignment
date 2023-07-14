@@ -30,8 +30,8 @@ public class IrctcAssignment {
 		driver.switchTo().window(childId);
 		js.executeScript("window.scrollBy(0,300)", "");
 		driver.findElement(By.cssSelector("#departFrom")).sendKeys("del");
-		List<WebElement> FromLoc = driver.findElements(By.cssSelector(".ui-menu-item"));
-		for (WebElement ele : FromLoc) {
+		List<WebElement> fromLoc = driver.findElements(By.cssSelector(".ui-menu-item"));
+		for (WebElement ele : fromLoc) {
 			String dept = ele.getText();
 			if (dept.equalsIgnoreCase("Delhi")) {
 				ele.click();
@@ -67,8 +67,8 @@ public class IrctcAssignment {
 		Thread.sleep(2000);
 		js.executeScript("window.scrollBy(0,500)", "");
 		WebElement state = driver.findElement(By.xpath("//select[@name='state']"));
-		Select StateSelect = new Select(state);
-		StateSelect.selectByVisibleText("DELHI");
+		Select stateSelect = new Select(state);
+		stateSelect.selectByVisibleText("DELHI");
 		driver.findElement(By.xpath("(//input[@placeholder='Traveller Name'])[1]")).sendKeys("travelone");
 		Select gen1 = new Select(driver.findElement(By.xpath("(//select[@name='select'])[1]")));
 		gen1.selectByValue("M");
